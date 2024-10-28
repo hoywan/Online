@@ -1,0 +1,367 @@
+<!-- WAN Ho Yeung SID: 57166350 -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="images/logo.svg" type="image/svg" />
+
+		<title>Home</title>
+		<link rel="stylesheet" href="css/styles.css" />
+		<script src="js/script.js"></script>
+
+		<!-- All icons with lni class are provided by https://lineicons.com/icons-->
+		<link rel="stylesheet" href="css/lineicons.css" />
+
+		<!-- All icons with fa-solid class are provided by https://fontawesome.com/search -->
+		<script
+			src="https://kit.fontawesome.com/dfda08cc5a.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<div class="logo">
+			<img src="images/logo.svg" alt="" />
+		</div>
+
+		<!-- <div id="lightDarkMode">
+			<img  alt="" />
+		</div> -->
+
+		<div class="mobileTopBar">
+			<div style="flex: 0 0 90%; max-width: 90%">
+				<img src="images/logo.svg" alt="" />
+			</div>
+			<div id="toggleButton">
+				<i class="lni lni-menu"></i>
+			</div>
+		</div>
+
+		<div id="headerContainer">
+			<header id="homeHeader">
+				<nav>
+					<ul class="nav-links">
+						<li><a href="./index.html">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#services">Services</a></li>
+						<li><a href="#loginSection" id="regHeaderLink1">Register / Login</a></li>
+						<li><a href="#enquiries" onclick="ExpandFromHeader('#enquiries .normalContainer','#enquiries i')">Enquiries</a></li>
+						<li><a href="#textSize" onclick="ExpandFromHeader('#textSize .normalContainer','#textSize i')">Text Size</a></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+
+		<main>
+			<div id="homeBackground"></div>
+
+			<section class="hidden" id="regSection">
+				<div class="title"><h1>Create Your Account!</h1></div>
+				<div class="centerContentContainer">
+					<form>
+						<div class="centerDiv50">
+							<div class="centerDiv50-items">
+								<label for="lastName">Last Name</label>
+								<input type="text" id="lastName" required minlength="2" placeholder="CHAN" pattern="[A-Za-z]+"/>
+							</div>
+							<div class="centerDiv50-items">
+								<label for="firstName">First Name</label>
+								<input type="text" id="firstName" required minlength="2" placeholder="Tai Man" pattern="[A-Za-z\s]+"/>
+							</div>
+						</div>
+
+						<div><label for="id">ID</label></div>
+						<input type="text" id="id" required minlength="10" placeholder="X123456(A)" pattern="[A-Z][0-9]{6}\([A-Z0-9]\)" />
+
+						<div><label for="phone">Phone Number</label></div>
+						<input type="tel" id="phone" placeholder="12345678" pattern="[0-9]{8}" required minlength="8" />
+
+						<div><label for="email">Email</label></div>
+						<input type="email" id="email" required minlength="8" placeholder="XXX@email.com"/>
+
+						<button type="submit">
+							Submit<i
+								style="padding-left: 10px"
+								class="fa-solid fa-arrow-right"
+							></i>
+						</button>
+						<br />
+						<br />
+						<div id="loginIcon">
+							Already have an account?
+							<i
+								style="padding-left: 10px"
+								class="fa-solid fa-right-to-bracket"
+							></i>
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<section id="loginSection">
+				<div class="title"><h1>Welcome Back!</h1></div>
+				<div class="centerContentContainer">
+					<form method="post">
+						<div>
+							<label for="username">Username</label>
+							<input type="text" id="username" required minlength="2" />
+						</div>
+						<div>
+							<label for="password">Password</label>
+							<div class="password">
+								<input
+									class="pass-items center"
+									type="password"
+									id="password"
+									required
+									minlength="2"
+								/>
+								<i
+									class="fa-solid fa-eye-slash pass-items center"
+									onclick="togglePassword()"
+								></i>
+								<script>
+									function togglePassword() {
+										var password = document.getElementById("password");
+										if (password.type === "password") {
+											password.type = "text";
+											document
+												.querySelector(".password i")
+												.classList.remove("fa-eye-slash");
+											document
+												.querySelector(".password i")
+												.classList.add("fa-eye");
+										} else {
+											password.type = "password";
+											document
+												.querySelector(".password i")
+												.classList.remove("fa-eye");
+											document
+												.querySelector(".password i")
+												.classList.add("fa-eye-slash");
+										}
+									}
+								</script>
+							</div>
+						</div>
+						<button type="submit">
+							Login<i
+								style="padding-left: 10px"
+								class="fa-solid fa-arrow-right"
+							></i>
+						</button>
+						<br />
+						<br />
+						<div id="regIcon">
+							New user?
+							<i style="padding-left: 10px" class="fa-solid fa-user"></i>
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<section id="enquiries">
+				<div class="expendButton" onclick="Expand('#enquiries .normalContainer','#enquiries i')">
+					<i class="lni lni-plus"></i>
+				</div>
+				<div class="title"><h1>Enquiries</h1></div>
+				<div class="normalContainer"  style="display: none;"> 
+					<!-- refer to https://www.dh.gov.hk/english/contactus/contactus_enq.html -->               
+					<p>Thank you for visiting our Homepage. For enquiries, please send them to:</p>
+	
+					<div class="centerDiv50">
+						<div class="centerDiv50-items">
+							<h2>Address</h2>
+							<p>	15/F, Innovation Centre<br>
+								300 King's Road<br>
+								North Point<br>
+								Hong Kong</p>
+								<br>
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.6780177288797!2d114.19574200000001!3d22.290183499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040103982efded%3A0x5f747d1ec30f1a04!2z5YyX6KeS6Iux55qH6YGTMzAw6Jmf!5e0!3m2!1sen-US!2shk!4v1728605444370!5m2!1sen-US!2shk" width="100%" height="300" style="border:0; border-radius:20px; overflow:hidden;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>				
+						</div>
+
+						<div class="centerDiv50-items">
+							<h2>Contact</h2>
+							<p><u>Fax</u><br>
+							(852) 3102 9876</p>
+							<p><u>Phone</u><br>
+							(852) 2456 7890</p>
+							<p><u>Email</u><br>
+							info@smarthousing.com.hk</p>
+						</div>
+					</div>
+					
+					<!-- content: end -->
+				</div>
+			</section>
+
+			<section id="textSize">
+				<div class="expendButton" onclick="Expand('#textSize .normalContainer','#textSize i')">
+					<i class="lni lni-plus"></i>
+				</div>
+				<div class="title"><h1>How to Change Text Size</h1></div>
+				<div class="normalContainer"  style="display: none;"> 
+					<!-- refer to https://www.policyaddress.gov.hk/2022/en/text-size.html -->               
+					<p>Now with this responsive web design, you can easily change the text size to fit your eyesight needs.</p>
+	
+					<div class="centerDiv50">
+						<div class="centerDiv50-items">
+							<h2>Shortcut</h2>
+							<p>If you browse our homepage on a desktop computer, a modern web browser will allow you to hold down the Ctrl key (Command key on a Macintosh) and press the + or - key to increase or decrease the text size, and 0 to go back to the default size.</p>
+							<p>On a smartphone or a tablet, you can simply pinch open on the screen to zoom in (i.e. to enlarge) and pinch close to zoom out (i.e. to reduce) everything.</p>
+									
+							<h2><i>Endorsement Disclaimer</i></h2>
+							<p><i>Our website does not endorse specific web browsers or recommend one browser over another. While some popular browsers are included here, mention of a specific browser does not imply any endorsement or recommendation.</i></p>							
+						</div>
+
+						<div class="centerDiv50-items">
+							<h2>Menu</h2>
+							<p>You may also change the text size from the menu. Choose from the following web browsers for specific instructions:</p>
+							<p><u>Chrome</u><br>
+							On the Page menu, select Zoom, then Larger.</p>
+							<p><u>Firefox</u><br>
+							On the View menu, select Zoom, then Zoom In.</p>
+							<p>Or you may click on the Menu icon and select + or - to make the text size bigger or smaller.</p>
+							<p><u>Internet Explorer / Edge</u><br>
+							On the View menu, select Text Size, then Largest.</p>
+							<p>Or you may click on the IE Settings icon, select Zoom, then choose a percentage or click Zoom In.</p>
+							<p><u>Opera</u><br>
+							On the View menu, select Zoom. Then choose a percentage.</p>
+							<p><u>Safari</u><br>
+							On the View menu, select Make Text Bigger.</p>
+						</div>
+					</div>
+					
+					<!-- content: end -->
+				</div>
+			</section>
+		</main>
+
+		<div class="bot-container slideInFromRight" id="botContainer">
+			<!-- <div> <img height="40px" src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"></div> -->
+			<iframe src="https://webchat.botframework.com/embed/HousingBot-bot?s=WBLg3SgxvMw.h3e_pKIhgAejRnmyhHUgxE9M_YO_tDbrNrlecrwUZdQ" class="bot-frame"></iframe>
+		</div>
+	
+		<button class="bot-toggle" id="botToggle" aria-label="Toggle chat bot">
+			<!-- lineicons message-3-text -->
+			<svg width="40" height="40" viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)"> <path d="M6.25 9.77344C6.25 9.35922 6.58579 9.02344 7 9.02344H17C17.4142 9.02344 17.75 9.35922 17.75 9.77344C17.75 10.1877 17.4142 10.5234 17 10.5234H7C6.58579 10.5234 6.25 10.1877 6.25 9.77344Z" fill="#FFFFF"/> <path d="M7 12.0234C6.58579 12.0234 6.25 12.3592 6.25 12.7734C6.25 13.1877 6.58579 13.5234 7 13.5234H12C12.4142 13.5234 12.75 13.1877 12.75 12.7734C12.75 12.3592 12.4142 12.0234 12 12.0234H7Z" fill="#FFFFF"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 5.53125C2.5 4.28861 3.50736 3.28125 4.75 3.28125H19.25C20.4926 3.28125 21.5 4.28861 21.5 5.53125V16.0796C21.5 17.3223 20.4926 18.3296 19.25 18.3296H15.1014L12.6025 21.6956C12.461 21.8861 12.2377 21.9985 12.0003 21.9985C11.763 21.9985 11.5396 21.8861 11.3981 21.6956L8.89931 18.3296H4.75C3.50736 18.3296 2.5 17.3223 2.5 16.0796V5.53125ZM4.75 4.78125C4.33579 4.78125 4 5.11704 4 5.53125V16.0796C4 16.4938 4.33579 16.8296 4.75 16.8296H9.2766C9.51396 16.8296 9.73731 16.942 9.87879 17.1326L12.0003 19.9903L14.1219 17.1326C14.2634 16.942 14.4867 16.8296 14.7241 16.8296H19.25C19.6642 16.8296 20 16.4938 20 16.0796V5.53125C20 5.11704 19.6642 4.78125 19.25 4.78125H4.75Z" fill="#FFFFF"/> </svg>
+		</button>
+
+		<style>
+			:root {
+				--bot-width: 380px;
+				--bot-height: 300px;
+				--shadow-color: rgba(0, 0, 0, 0.1);
+
+			}
+
+			.slideInFromRight{
+				animation: slideInFromRight 0.5s forwards;
+			}
+
+			.slideOutToRight{
+				animation: slideOutToRight 0.5s forwards;
+			}
+	
+			.bot-container {
+				position: fixed;
+				bottom: 150px;
+				right: 20px;
+				z-index: 1000;
+				display: none;
+				background: white;
+				border-radius: 12px;
+				border-color: var(--primary-color);
+				box-shadow: 0 8px 32px var(--shadow-color);
+				transition: all 0.3s ease;
+				opacity: 0;
+				transform: translateY(20px);
+				padding: 10px;
+			}
+	
+			.bot-container.active {
+				display: block;
+				opacity: 0.8;
+				transform: translateY(0);
+			}
+	
+			.bot-frame {
+				width: var(--bot-width);
+				height: var(--bot-height);
+				border: none;
+				border-radius: 12px;
+			}
+	
+			.bot-toggle {
+				position: fixed;
+				bottom: 40%;
+				right: 10px;
+				width: 60px;
+				height: 60px;
+				border-radius: 30px;
+				background: var(--primary-color-hover);
+				border: none;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				box-shadow: 0 4px 16px var(--shadow-color);
+				transition: all 0.3s ease;
+				z-index: 1001;
+			}
+	
+			.bot-toggle:hover {
+				transform: scale(1.05);
+				background: var(--primary-color);
+			}
+	
+			.bot-toggle .icon {
+				width: 24px;
+				height: 24px;
+				fill: white;
+			}
+	
+			@media (max-width: 480px) {
+				.bot-container {
+					right: 10px;
+					left: 10px;
+					bottom: 80px;
+				}
+	
+				.bot-frame {
+					width: 100%;
+				}
+	
+				.bot-toggle {
+					right: 10px;
+					bottom: 10px;
+				}
+			}
+		</style>
+
+		<footer>
+			<a href="#" class="back-to-top">
+				<i class="lni lni-chevron-up"></i>
+			</a>
+
+			<div class="footerContainer">
+				<div class="flex-items center">
+					<img src="images/logo_dark.svg" alt="" />
+				</div>
+				<div class="flex-items">
+					<div class="title">Quick Links</div>
+					<ul class="link">
+						<li><a class="" href="./index.html">Home</a></li>
+						<li><a class="" href="./information.html">About</a></li>
+						<li><a class="" href="./phone.html">Services</a></li>
+						<li><a href="#loginSection" id="regHeaderLink2">Register / Login</a></li>
+						<li><a href="#textSize" onclick="Expand('#textSize .normalContainer','#textSize i')">Text Size</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="copyright" class="center"></div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,633 @@
+/*WAN Ho Yeung SID: 57166350 */
+
+/* General Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--header-color: white;
+	--header-color-hover: rgba(231, 173, 158, 0.8);
+	--footer-color: rgb(212, 154, 142);
+	--footer-color: rgb(65, 157, 185);
+	--primary-color: linear-gradient(to right, rgb(0, 228, 209), rgb(60, 218, 245));
+	--primary-color-hover: linear-gradient(to right, rgba(0, 228, 209,0.8), rgba(60, 218, 245,0.8));
+	/* --primary-color: rgb(252, 192, 114); */
+	--primary-color-08: rgba(252, 192, 114, 0.8);
+	--h2-color:rgb(95, 203, 236);
+	/* --h2-color: #f0b200; */
+	--h3-color: #9a7b60;
+	--h4-color: #eba30b;;
+
+	--button-color: rgb(95, 203, 236);
+	--button-color-hover: rgba(95, 203, 236, 0.8);
+}
+
+/* Common Element Style */
+
+h1 {
+	background: var(--primary-color);
+	font-size: 30px;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	position: relative;
+}
+h1::after {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 43px;
+	width: 100%;
+	height: 10px;
+	/* https://www.beyondcss.dev/underline.svg */
+	background-image: url("../images/line.svg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	}
+
+h2 {
+	color: var(--h2-color);
+	font-size: 25px;
+	border-bottom: 3px solid var(--h2-color);
+	padding-bottom: 5px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+h3 {
+	color: var(--h3-color);
+	font-size: 20px;
+}
+
+h4 {
+	color: var(--h4-color);
+	font-size: 15px;
+
+}
+
+/* For table */
+
+table {
+	border: 1px solid #dededf;
+	border-collapse: collapse;
+	border-spacing: 1px;
+	text-align: center;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	margin-top: 20px;
+	width: 100%;
+}
+
+table th {
+	background-color: rgb(239, 194, 194);
+	color: white;
+	padding: 10px;
+	font-weight: 600;
+}
+
+td {
+	border: 1px solid #dededf;
+	background-color: white;
+	color: #000000;
+	padding: 10px;
+}
+/* For table end*/
+
+form {
+	padding: 20px;
+}
+
+p {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.center {
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+}
+
+.centerContentContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+}
+
+.normalContainer {
+	width: 80%;
+	margin: auto;
+    position: relative;
+}
+
+.centerDiv50 {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	gap: 5%;
+}
+
+.centerDiv50-items:nth-child(1) {
+	width: 47.5%;
+}
+
+.centerDiv50-items:nth-child(2) {
+	width: 47.5%;
+}
+
+.hidden {
+	display: none;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+/* Common Element End */
+
+/* Body */
+body {
+	font-family: "Poppins", sans-serif;
+	background-color: white;
+}
+
+.mobileTopBar {
+	display: none;
+}
+
+/* Header */
+#headerContainer {
+	position: sticky;
+	top: 0;
+	background-color: white;
+	z-index: 999;
+	box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+header {
+	width: 100%;
+	background-color: var(--header-color);
+	padding: 15px 0;
+	display: block;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	animation: slideInFromTop 0.5s ease-in forwards;
+}
+
+/* Logo Styling */
+.logo {
+	height: 120px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 8em;
+}
+
+.logo img {
+	height: 100px;
+	width: auto;
+}
+
+/* Navigation Links */
+.nav-links {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.nav-links li {
+	margin: 0 2%;
+}
+
+.nav-links a {
+	color: #303030;
+	text-decoration: none !important;
+	font-size: 18px;
+	padding: 10px 15px;
+	transition: background-color 0.3s ease;
+	position: relative;
+}
+
+#toggleButton {
+	display: none;
+}
+
+/* Line Effect for header and footer */
+.nav-links a::before {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 90%;
+	height: 3px;
+	border-radius: 50px;
+	width: 0;
+	background: var(--primary-color);
+	transition: width 0.3s ease;
+	width: 0;
+}
+
+.footerContainer a {
+	position: relative;
+}
+
+.footerContainer a::before {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 20px;
+	height: 2px;
+	border-radius: 50px;
+	width: 0;
+	background: white;
+	transition: width 0.3s ease;
+	width: 0;
+}
+
+.nav-links a:hover::before,
+.footerContainer a:hover::before {
+	width: 100%;
+}
+
+.nav-links a:hover {
+	color: var(--primary-color);
+}
+/* Header end */
+
+section {
+	margin-top: 50px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background: white;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+}
+
+section .title {
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-top: 15px;
+	margin-bottom: 35px;
+	justify-content: center;
+	align-items: center;
+}
+
+/* HomePageBackground */
+#homeBackground {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 580px;
+	background-image: url("../images/HomeImage.jpg");
+	background-size: cover;
+	background-position: center;
+}
+/* HomePageBackground end */
+
+/* For All Sections*/
+.expendButton {
+	display: flex;
+	justify-content: end;
+	align-items: end;
+	margin-right: 10%;
+}
+
+.expendButton i {
+	font-size: 30px;
+	width: auto;
+	color: var(--button-color);
+}
+/* For All Sections end*/
+
+/* For Registration and Login */
+label {
+	color: grey;
+	margin-bottom: 10px;
+}
+
+input {
+	margin-top: 10px;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	overflow: hidden;
+	font-size: 16px;
+	width: 100%;
+}
+
+button {
+	margin-top: 20px;
+	padding: 10px;
+	background-color: var(--button-color);
+	color: white;
+	border: none;
+	border-radius: 30px;
+	overflow: hidden;
+	cursor: pointer;
+	font-size: 16px;
+	width: 100%;
+}
+
+button:hover {
+	background-color: var(--button-color-hover);
+}
+
+.password {
+	display: flex;
+	flex-direction: row;
+}
+
+.pass-items:nth-child(1) {
+	width: 85%;
+}
+
+.pass-items:nth-child(2) {
+	width: 15%;
+}
+
+#regIcon {
+	color: grey;
+}
+
+#loginIcon {
+	color: grey;
+}
+
+#regIcon:hover {
+	cursor: pointer;
+	color: var(--primary-color);
+}
+
+#loginIcon:hover {
+	cursor: pointer;
+	color: var(--primary-color);
+}
+
+/* For Registration and Login end */
+
+/* Footer */
+
+/* back-to-top */
+.back-to-top {
+	font-size: 20px;
+	color: white;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 50%;
+	text-align: center;
+	z-index: 999;
+	display: none;
+	background-color: var(--button-color);
+}
+
+.back-to-top:hover {
+	background-color: var(--button-color-hover);
+	color: white;
+}
+/* back-to-top end */
+
+footer {
+	margin-top: 50px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background-color: var(--footer-color);
+	width: 100%;
+	position: relative;
+	bottom: 0;
+	color: white;
+}
+
+.footerContainer {
+	display: flex;
+	flex-direction: row;
+	padding-top: 30px;
+	padding-bottom: 40px;
+}
+
+.footerContainer .title {
+	font-size: 25px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1.5px solid white;
+	width: 80%;
+}
+
+.flex-items:nth-child(1) {
+	width: 50%;
+}
+
+.flex-items:nth-child(2) {
+	width: 50%;
+}
+
+footer img {
+	max-width: 250px;
+}
+
+footer .link li {
+	margin-top: 15px;
+	list-style-type: none;
+}
+
+#copyright {
+	width: 100%;
+}
+/* Footer end */
+
+/* Animation */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.9;
+    }
+}
+
+@keyframes slideOutToTop {
+    0% {
+        transform: translateY(0);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 0.9;
+    }
+}
+
+@keyframes slideOutToRight {
+	0% {
+		transform: translateX(0);
+		opacity: 0.9;
+	}
+	100% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.normalContainer {
+    animation: fadeIn 0.2s ease-in;
+}
+
+button {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Animation end */
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+	.logo {
+		display: none;
+	}
+
+	.mobileTopBar {
+		height: 80px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-right: 30px;
+		padding-left: 30px;
+		display: flex;
+		box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.1);
+		position: sticky;
+		top: 0;
+		background-color: white;
+		z-index: 999;
+	}
+
+	.show_m {
+		display: flex !important;
+	}
+	.hidden_m {
+		display: none;
+	}
+
+	.mobileTopBar img {
+		height: 60px;
+		display: flex;
+	}
+
+	#headerContainer {
+		display: none;
+		overflow: hidden;
+		top: 80px;
+		position: fixed;
+		width: 100%;
+		min-height: 0;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 0px 15px 20px 0px rgba(56, 66, 77, 0.1);
+		z-index: 99;
+	}
+
+	.headerslideInFromTop {
+		animation: slideInFromTop 0.5s ease-in forwards;
+	}
+
+	.headerslideOutToTop {
+		animation: slideOutToTop 0.5s ease-in forwards;
+	}
+
+	.nav-links {
+		flex-direction: column;
+	}
+
+	.nav-links li {
+		margin: 8px 0;
+		text-align: center;
+	}
+
+	#homeBackground {
+		height: 300px;
+		background-position: center top;
+	}
+
+	/* Toggle menu button */
+	.menu-toggle {
+		display: block;
+		color: white;
+		font-size: 28px;
+		cursor: pointer;
+	}
+
+	nav.active .nav-links {
+		display: flex;
+	}
+
+	#toggleButton {
+		transition: background-color 0.3s ease;
+		display: block;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 30px;
+	}
+
+	#toggleButton i {
+		width: auto;
+		color: var(--primary-color);
+	}
+
+	.footerContainer {
+		display: none;
+		height: 30px;
+	}
+
+	footer {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		position: relative;
+		bottom: 0;
+	}
+}
