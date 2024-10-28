@@ -138,6 +138,24 @@ p {
 	width: 47.5%;
 }
 
+.centerDiv33 {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	gap: 5%;
+}
+
+.centerDiv33-items:nth-child(1) {
+	width: 31.666%;
+}
+
+.centerDiv33-items:nth-child(2) {
+	width: 31.666%;
+}
+.centerDiv33-items:nth-child(3) {
+	width: 31.666%;
+}
+
 .hidden {
 	display: none;
 }
@@ -310,6 +328,22 @@ section .title {
 	color: var(--button-color);
 }
 /* For All Sections end*/
+
+/* For About */
+
+#about div { /* special word style for stylish, display goal */
+	font-size: 25px;
+	color: rgb(49, 47, 45);
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 400;
+	text-align: left;
+	
+}
+
+/* For About end */
 
 /* For Registration and Login */
 label {
