@@ -332,14 +332,15 @@ section .title {
 /* For About */
 
 #about div { /* special word style for stylish, display goal */
-	font-size: 25px;
+	font-size: 20px;
 	color: rgb(49, 47, 45);
 	padding: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-weight: 400;
+	font-weight: 500;
 	text-align: left;	
+	line-height: 1.75;
 }
 
 .aboutImg {
@@ -633,28 +634,24 @@ button {
 		background-position: center top;
 	}
 
-	.centerDiv33 {
-		width: 100%;
-		gap: 5%;
-	}
 	
-	.centerDiv33-items:nth-child(1) {
-		width: 31.666%;
-	}
-	
-	.centerDiv33-items:nth-child(2) {
-		width: 31.666%;
-	}
-	.centerDiv33-items:nth-child(3) {
-		width: 31.666%;
+	.centerDiv33-items {
+		margin-bottom: 20px;
 	}
 
+	#about div {
+		font-size: 16px;
+	}	
+
 	.aboutImg {
-		height: 60px;
+		width: 60px;
+		height: 100%;
 	}
 	
 	.LogoImg {
-		height: 120px;
+		width: 80px;
+		height: 100%;
+
 	}
 
 	/* Toggle menu button */
