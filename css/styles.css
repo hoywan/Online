@@ -173,7 +173,12 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
+.link a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover:not(.link a):not(.nav-links a) {
 	color: #131E6D;
 	text-decoration: underline;
 }
