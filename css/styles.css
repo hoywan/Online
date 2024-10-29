@@ -131,11 +131,14 @@ p {
 }
 
 .centerDiv50-items:nth-child(1) {
-	width: 47.5%;
+	min-width: 47.5%;
+	max-width: 47.5%;
+
 }
 
 .centerDiv50-items:nth-child(2) {
-	width: 47.5%;
+	min-width: 47.5%;
+	max-width: 47.5%;
 }
 
 .centerDiv33 {
@@ -332,7 +335,7 @@ section .title {
 /* For About */
 
 #about div { /* special word style for stylish, display goal */
-	font-size: 20px;
+	font-size: 18px;
 	color: rgb(49, 47, 45);
 	padding: 10px;
 	display: flex;
@@ -679,6 +682,10 @@ button {
 	#toggleButton i {
 		width: auto;
 		color: var(--primary-color);
+	}
+
+	.botToggle {
+		bottom: 50%;
 	}
 
 	.footerContainer {
