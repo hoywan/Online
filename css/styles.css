@@ -105,6 +105,10 @@ p {
 	padding-bottom: 10px;
 }
 
+div {
+	overflow-wrap: anywhere;
+}
+
 .center {
 	display: flex !important;
 	justify-content: center !important;
