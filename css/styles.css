@@ -504,14 +504,14 @@ footer .link li {
     }
     100% {
         transform: translateY(0);
-        opacity: 0.9;
+        opacity: 0.95;
     }
 }
 
 @keyframes slideOutToTop {
     0% {
         transform: translateY(0);
-        opacity: 0.9;
+        opacity: 0.95;
     }
     100% {
         transform: translateY(-100%);
