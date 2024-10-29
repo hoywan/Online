@@ -526,14 +526,14 @@ footer .link li {
     }
     100% {
         transform: translateX(0);
-        opacity: 0.9;
+        opacity: 0.95;
     }
 }
 
 @keyframes slideOutToRight {
 	0% {
 		transform: translateX(0);
-		opacity: 0.9;
+		opacity: 0.95;
 	}
 	100% {
 		transform: translateX(100%);
@@ -682,10 +682,6 @@ button {
 	#toggleButton i {
 		width: auto;
 		color: var(--primary-color);
-	}
-
-	.botToggle {
-		bottom: 50%;
 	}
 
 	.footerContainer {
