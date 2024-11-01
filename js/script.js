@@ -111,6 +111,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const botToggle = document.querySelector("#botToggle");
 	const botContainer = document.querySelector("#botContainer");
+
+	//Prevent unintented loading of the bot if the user don't clicks the button
+
+	document.getElementById('botToggle').addEventListener('click', function() {
+		var botContainer = document.getElementById('botContainer');
+		if (!botContainer.querySelector('iframe')) {
+			var iframe = document.createElement('iframe');
+			iframe.src = 'https://webchat.botframework.com/embed/HousingBot-bot?s=WBLg3SgxvMw.h3e_pKIhgAejRnmyhHUgxE9M_YO_tDbrNrlecrwUZdQ';
+			iframe.className = 'bot-frame';
+			botContainer.appendChild(iframe);
+		}
+	});
+
 	let isBotVisible = false;
 	
 	botToggle.addEventListener("click", () => {
